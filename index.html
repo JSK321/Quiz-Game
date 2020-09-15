@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz!</title>
+</head>
+
+<body>
+    <h1 class="quizTimer">Time: 60 seconds.</h1>
+
+    <div class="quizStartCard" style="width: 25rem;">
+        <img src="https://i.pinimg.com/originals/3b/5c/ac/3b5cacab3dab2f721d0ffd010129753c.jpg" class="card-img-top"
+            alt="Avatar_world_map">
+        <div class="quizStart">
+            <h3 class="card-title">Avatar the Last Airbender Quiz!</h3>
+            <p class="card-text">This is a timed quiz to test your knowledge about Avatar the Last Airbender TV Show!
+            </p>
+            <button class="startBtn">Start Quiz!</button>
+        </div>
+    </div>
+
+    <div class="questionCard1" style="width: 25rem;">
+        <img src="https://i.pinimg.com/originals/d3/d3/f3/d3d3f39b67c999c0177554a188cd54e9.jpg" class="card-img-top"
+            alt="Aang in ice">
+        <div class="card-body1">
+            <p class="card-text">First question</p>
+            <button id="ansBtn1" onclick="loseTime()">answer 1</button>
+            <button id="ansBtn2" onclick="question1()">answer 2</button>
+            <button id="ansBtn3" onclick="loseTime()">answer 3</button>
+            <button id="ansBtn4" onclick="loseTime()">answer 4</button>
+            <hr>
+            <h4></h4>
+        </div>
+    </div>
+
+    <div class="questionCard2" style="width: 25rem;">
+        <img src="https://img.ibxk.com.br/2020/08/12/12170523709491.jpg" class="card-img-top" alt="Avatar Aang">
+        <div class="card-body2">
+            <p class="card-text">Second question</p>
+            <button id="ansBtn1" onclick="loseTime()">answer 1</button>
+            <button id="ansBtn2" onclick="question2()">answer 2</button>
+            <button id="ansBtn3" onclick="loseTime()">answer 3</button>
+            <button id="ansBtn4" onclick="loseTime()">answer 4</button>
+        </div>
+    </div>
+
+    <div class="questionCard3" style="width: 25rem;">
+        <img src="https://i.redd.it/6o0sz49wyzp31.png" class="card-img-top" alt="Appa">
+        <div class="card-body3">
+            <p class="card-text">Third question</p>
+            <button id="ansBtn1" onclick="question3()">answer 1</button>
+            <button id="ansBtn2" onclick="loseTime()">answer 2</button>
+            <button id="ansBtn3" onclick="loseTime()">answer 3</button>
+            <button id="ansBtn4" onclick="loseTime()">answer 4</button>
+        </div>
+    </div>
+
+    <div class="questionCard4" style="width: 25rem;">
+        <img src="https://vignette.wikia.nocookie.net/avatar/images/c/c1/Iroh_smiling.png/revision/latest?cb=20130626131914" class="card-img-top" alt="Uncle Iroh">
+        <div class="card-body4">
+            <p class="card-text">Fourth question</p>
+            <button id="ansBtn1" onclick="loseTime()">answer 1</button>
+            <button id="ansBtn2" onclick="loseTime()">answer 2</button>
+            <button id="ansBtn3" onclick="loseTime()">answer 3</button>
+            <button id="ansBtn4">answer 4</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="javascript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
