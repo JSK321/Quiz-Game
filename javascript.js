@@ -82,7 +82,7 @@ var quizList = [
     correct: "No worries",
   },
   {
-    image: "http://queenofsarcasm.tripod.com/PumbaaScreams.jpg",
+    image: "https://i.pinimg.com/originals/9d/3f/72/9d3f72b56cb9b95e23d9a992981d77a9.jpg",
     alt: "pumbaa",
     question: "Who tries to eat Pumbaa?",
     answer1: "Simba",
@@ -92,7 +92,7 @@ var quizList = [
     correct: "Nala",
   },
   {
-    image: "https://i2.wp.com/www.superpoweredfancast.com/wp-content/uploads/2017/07/Bachelor-Zazu.png?fit=677%2C400&ssl=1",
+    image: "https://lumiere-a.akamaihd.net/v1/images/character_thelionking_zazu_baad49f3.jpeg",
     alt: "zazu",
     question: "What is Zazu's official title?",
     answer1: "Butler",
@@ -115,16 +115,16 @@ var quizList = [
 ];
 
 
-//Question card/Final Score Card are hidden.
+// Hiding elements.
 questionCard.css('display', 'none');
 scoreBox.css('display', 'none');
+
 
 
 //Question card context updater.
 var questions = quizList[questionIndex];
 
 function showQuestions() {
-
   image.attr('src', quizList[questionIndex].image);
   image.attr('alt', quizList[questionIndex].alt);
   questionText.text(quizList[questionIndex].question);
@@ -139,6 +139,7 @@ quizBtn.on('click', function () {
   startCard.css('display', 'none');
   questionCard.css('display', 'block');
   showQuestions();
+
 
   var quizClock = setInterval(function () {
     quizTime--;
@@ -207,12 +208,13 @@ startMenu.on('click', function() {
   timeLeft.text("Time: 60 seconds remaining.");
 });
 
-// View high scores button
+// View high scores button  
 viewScoresBtn.on('click', function(){
   startCard.css('display', 'none');
   scoreBox.css('display', 'block');
   timeLeft.text("");
 });
+
 
 // Local Storage information
 var storedScores = localStorage.getItem('scores')
@@ -224,13 +226,12 @@ if(storedScores){
 }
 storedScores.forEach(function(score){
   scoresList.append(`<li>${score.userInits} -- ${score.userScore} points`)
-
+  
 })
-
 
 // End game function.
 function endGame(){
-  var userInits = prompt("Please enter your name: ")
+  var userInits = prompt("Please enter your initials and refresh to view score")
   var userObj = {
     userInits: userInits,
     userScore: userPoints + quizTime,
