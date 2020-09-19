@@ -13,26 +13,18 @@ body {
 }
 
 
-.startBtn {
+.startBtn, .scoreBtn, .viewScoreBtn, #userSubmit{
     background-color: lightskyblue;
     border-radius: 7px;
     font-weight: bold;
 }
 
-.viewScoreBtn {
-    background-color: lightskyblue;
-    border-radius: 7px;
-    font-weight: bold;
-}
-
-.scoreBtn {
-    background-color: lightskyblue;
-    border-radius: 7px;
-    font-weight: bold;
+#userName{
+    background-color: wheat;
 }
 
 #ansBtn1, #ansBtn2, #ansBtn3, #ansBtn4 {
-    background-color: lightskyblue;
+    background-color: wheat;
     border-radius: 7px;
     font-weight: bold;
 }

@@ -14,7 +14,7 @@ var scoresList = $('#scores-list');
 var quizBtn = $('.startBtn');
 var startMenu = $('.scoreBtn');
 var viewScoresBtn = $('.viewScoreBtn');
-
+var users = [];
 var userPoints = 0;
 var quizTime = 60;
 var questionIndex = 0;
@@ -111,14 +111,12 @@ var quizList = [
     answer4: "Change is good",
     correct: "It is time",
   },
- 
-];
 
+];
 
 // Hiding elements.
 questionCard.css('display', 'none');
 scoreBox.css('display', 'none');
-
 
 
 //Question card context updater.
@@ -140,7 +138,6 @@ quizBtn.on('click', function () {
   questionCard.css('display', 'block');
   showQuestions();
 
-
   var quizClock = setInterval(function () {
     quizTime--;
     timeLeft.text("Time: " + quizTime + " seconds remaining.");
@@ -150,10 +147,20 @@ quizBtn.on('click', function () {
       scoreBox.css('display', 'block');
       questionCard.css('display', 'none');
       endGame();
-    }
 
+      if (quizTime < 0) {
+        quizTime = 0
+      }
+    }
   }, 1000)
 });
+
+//Reset all variables
+function resetVar() {
+  userPoints = 0;
+  quizTime = 60;
+  questionIndex = 0;
+}
 
 // Answer Buttons right or wrong.
 button1.on('click', function () {
@@ -163,6 +170,8 @@ button1.on('click', function () {
     showQuestions();
     answerRsp.text("You got it correct!");
   } else {
+    questionIndex++;
+    showQuestions();
     answerRsp.text("You are incorrect!");
     quizTime -= 5;
   }
@@ -174,6 +183,8 @@ button2.on('click', function () {
     showQuestions();
     answerRsp.text("You got it correct!");
   } else {
+    questionIndex++;
+    showQuestions();
     answerRsp.text("You are incorrect!");
     quizTime -= 5;
   }
@@ -185,6 +196,8 @@ button3.on('click', function () {
     showQuestions();
     answerRsp.text("You got it correct!");
   } else {
+    questionIndex++;
+    showQuestions();
     answerRsp.text("You are incorrect!");
     quizTime -= 5;
   }
@@ -196,46 +209,52 @@ button4.on('click', function () {
     showQuestions();
     answerRsp.text("You got it correct!");
   } else {
+    questionIndex++;
+    showQuestions();
     answerRsp.text("You are incorrect!");
     quizTime -= 5;
   }
 });
 
 // Final score menu, return to start menu
-startMenu.on('click', function() {
+startMenu.on('click', function () {
   scoreBox.css('display', 'none');
   startCard.css('display', 'block');
-  timeLeft.text("Time: 60 seconds remaining.");
+  resetVar();
 });
 
 // View high scores button  
-viewScoresBtn.on('click', function(){
+viewScoresBtn.on('click', function () {
   startCard.css('display', 'none');
   scoreBox.css('display', 'block');
   timeLeft.text("");
 });
 
+// End game function.
+function endGame() {
+  $('#userSubmit').on('click', function () {
+    var userName = $('#userName').val();
+    users.push(userName)
+    var userInits = users
+    var userObj = {
+      userInits: userInits,
+      userScore: userPoints + quizTime,
+    }
+    storedScores.push(userObj);
+    localStorage.setItem('scores', JSON.stringify(storedScores));
+  })
+}
 
 // Local Storage information
-var storedScores = localStorage.getItem('scores')
 
-if(storedScores){
+var storedScores = localStorage.getItem('scores')
+if (storedScores) {
   storedScores = JSON.parse(storedScores);
 } else {
   storedScores = [];
 }
-storedScores.forEach(function(score){
-  scoresList.append(`<li>${score.userInits} -- ${score.userScore} points`)
-  
-})
 
-// End game function.
-function endGame(){
-  var userInits = prompt("Please enter your initials and refresh to view score")
-  var userObj = {
-    userInits: userInits,
-    userScore: userPoints + quizTime,
-  }
-  storedScores.push(userObj);
-  localStorage.setItem('scores', JSON.stringify(storedScores));
-}
+storedScores.forEach(function (score) {
+  scoresList.append(`<li>${score.userInits}:  ${score.userScore} points`)
+
+})

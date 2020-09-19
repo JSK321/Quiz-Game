@@ -21,7 +21,7 @@
                 <p class="card-text">This is a timed quiz to test your knowledge about Lion King! Each correct answer
                     gives you +10 points, while each incorrect answer subtracts 5 seconds off the time. Final score is
                     equal to the points and the time remaining!<br>Good luck!</p>
-                <button class="startBtn">Start Quiz!</button>
+                <button class="startBtn">Start Quiz</button>
                 <button class="viewScoreBtn">Highscores</button>
             </div>
         </div>
@@ -41,13 +41,20 @@
 
         <div class="scores-box" style="width: 30rem;">
             <div class="card-body">
+                <form>
+                    <label for = "userName">Add your name</label>
+                    <input id ="userName" type = 'text' placeholder = Name>
+                    <button id = "userSubmit">Submit</button>
+                    <br>
+                    <br>
                     <h4 class="card-title">Total Score</h4>
                     <ul id='scores-list'>
 
 
                     </ul>
+                </form>
                     <button class="scoreBtn">Start Menu</button>
-             
+                
             </div>
         </div>
 
