@@ -12,7 +12,7 @@ This is a time quiz to test your knowledge on Lion King! There is a total time o
 ![QuestionPage](Assets/lionkingquestion.png)
 
 ### Author
-- Jae Kim
+- <a href="https://github.com/JSK321">Jae Kim</a>
 
 ### License
 - MIT
