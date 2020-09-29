@@ -5,7 +5,7 @@ This is a time quiz to test your knowledge on Lion King! There is a total time o
 
 ### Technologies
 - [JavaScript](https://www.javascript.com/)
-- [Bootstrap}(https://getbootstrap.com/)
+- [Bootstrap](https://getbootstrap.com/)
 
 ### Screen shots
 ![StartPage](Assets/lionkingstart.png)
